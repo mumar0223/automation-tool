@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import z from "zod";
+import { Icon } from "@iconify-icon/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Card,
@@ -35,20 +36,21 @@ export default function LoginForm() {
   });
 
   const onSubmit = async (data: LoginFormData) => {
-    await authClient.signIn.email({
-      email: data.email,
-      password: data.password,
-      callbackURL: "/",
-    },
-    {
-      onSuccess: () => {
-        router.push("/");
+    await authClient.signIn.email(
+      {
+        email: data.email,
+        password: data.password,
+        callbackURL: "/",
       },
-      onError: (ctx) => {
-        console.error("Login error:", ctx.error.message);
-      },
-    }
-  );
+      {
+        onSuccess: () => {
+          router.push("/");
+        },
+        onError: (ctx) => {
+          console.error("Login error:", ctx.error.message);
+        },
+      }
+    );
   };
 
   const isPending = form.formState.isSubmitting;
@@ -73,6 +75,7 @@ export default function LoginForm() {
                     type="button"
                     disabled={isPending}
                   >
+                    <Icon icon="logos:github-icon" />
                     Continue with GitHub
                   </Button>
                   <Button
@@ -81,6 +84,7 @@ export default function LoginForm() {
                     type="button"
                     disabled={isPending}
                   >
+                    <Icon icon="logos:google-icon" />
                     Continue with Google
                   </Button>
                 </div>

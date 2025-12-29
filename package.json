@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@iconify/json": "^2.2.422",
     "@prisma/adapter-pg": "^7.1.0",
     "@prisma/client": "^7.2.0",
     "@radix-ui/react-accordion": "^1.2.12",
@@ -68,6 +69,7 @@
     "zod": "^4.2.1"
   },
   "devDependencies": {
+    "@iconify-icon/react": "^3.0.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20.19.27",
     "@types/pg": "^8.16.0",

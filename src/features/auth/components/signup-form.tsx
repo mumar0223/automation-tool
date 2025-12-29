@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
+import { Icon } from "@iconify-icon/react";
 
 const SignupSchema = z
   .object({
@@ -84,6 +85,7 @@ export default function SignupForm() {
                     type="button"
                     disabled={isPending}
                   >
+                    <Icon icon="logos:github-icon" />
                     Continue with GitHub
                   </Button>
                   <Button
@@ -92,6 +94,7 @@ export default function SignupForm() {
                     type="button"
                     disabled={isPending}
                   >
+                    <Icon icon="logos:google-icon" />
                     Continue with Google
                   </Button>
                 </div>
